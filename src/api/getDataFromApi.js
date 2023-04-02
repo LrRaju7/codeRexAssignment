@@ -13,10 +13,11 @@ export const getAllUsersData = async (setAllUserData, setLoading) => {
     setLoading(false);
   };
 
-//   export const getGlobalPageUrls = async (id, setPageBreadcrumb, setLoading) => {
-//     const breadcrumbData = await axios.get(
-//       DRUPAL_API_ENDPOINT + FETCH_SPECIFIC_COMPONENT + "breadcrumb/" + id
-//     );
-//     setPageBreadcrumb(breadcrumbData.data.data.attributes);
-//     setLoading(false);
-//   };
+  export const getUserPosts = async (id, setUsersPostsData, setLoading) => {
+    const usersPostsData = await axios.get(
+        FETCH_ALL_USERS_DATA +"/" + id + FETCH_SPECIFIC_USERS_POSTS
+    );
+    console.log(usersPostsData);
+    setUsersPostsData(usersPostsData.data);
+    setLoading(false);
+  };

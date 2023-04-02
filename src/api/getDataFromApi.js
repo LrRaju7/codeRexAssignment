@@ -25,7 +25,7 @@ export const getAllUsersData = async (setAllUserData, setLoading) => {
     const usersPostsData = await axios.get(
         FETCH_ALL_USERS_DATA +"/" + id + FETCH_SPECIFIC_USERS_POSTS
     );
-    console.log(usersPostsData,user[0]);
+    console.log(usersPostsData.data,user[0]);
     setUsersPostsData(usersPostsData.data);
     setLoading(false);
   };

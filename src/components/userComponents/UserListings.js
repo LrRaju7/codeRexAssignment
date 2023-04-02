@@ -13,6 +13,11 @@ const UserListings = () => {
     <>
       {loading ? null : (
         <>
+        <div className="container p-5 text-center">
+          <h1>
+            User Listings
+          </h1>
+        </div>
           <table class="table">
         <thead>
           <tr>

@@ -27,3 +27,6 @@ useUser() hook
 ● Display a list of all posts associated with the user
 ● Each post should display the title and body
 
+
+### `Live Site Link`
+->https://code-rex-assignment.vercel.app/

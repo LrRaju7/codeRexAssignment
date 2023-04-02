@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { getAllUsersData } from "../../api/getDataFromApi";
 
 const UserListings = () => {
@@ -20,6 +21,7 @@ const UserListings = () => {
             <th scope="col">Last Name</th>
             <th scope="col">Email</th>
             <th scope="col">Company</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -37,6 +39,13 @@ const UserListings = () => {
                               <td>{user.lastName}</td>
                               <td>{user.email}</td>
                               <td>{user.company.name}</td>
+                              <td>
+                                <button className="btn btn-primary btn-sm">
+                                  <Link to={`/user/${user.id}`} className="link-text">
+                                    View
+                                  </Link>
+                                </button>
+                              </td>
                             </tr>
                           </>
                         )

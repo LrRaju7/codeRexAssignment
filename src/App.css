@@ -1,0 +1,11 @@
+.link-text{
+  color: aliceblue;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.link-text:hover{
+  color: aliceblue;
+  text-decoration: none;
+  cursor: pointer;
+}

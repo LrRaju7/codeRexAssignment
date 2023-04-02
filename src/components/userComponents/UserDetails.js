@@ -7,12 +7,19 @@ const UserDetails = () => {
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
   const [usersPostsData, setUsersPostsData] = useState(null);
+  const [userData, setUserData] = useState(null);
 
   useEffect(() => {
-    getUserPosts(id,setUsersPostsData,setLoading);
+    getUserPosts(id,setUsersPostsData,setLoading,setUserData);
   },[]);
   return (
-    <div>UserDetails</div>
+    <>
+      {loading ? null : (
+        <>
+          
+        </>
+        )}
+    </>
   )
 }
 

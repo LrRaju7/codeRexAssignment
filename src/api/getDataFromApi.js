@@ -8,16 +8,24 @@ export const getAllUsersData = async (setAllUserData, setLoading) => {
     const allUsersData = await axios.get(
       FETCH_ALL_USERS_DATA
     );
-    console.log(allUsersData.data);
     setAllUserData(allUsersData.data);
     setLoading(false);
   };
 
-  export const getUserPosts = async (id, setUsersPostsData, setLoading) => {
+  export const getUserPosts = async (id, setUsersPostsData, setLoading,setUserData) => {
+      const allUsersData = await axios.get(
+          FETCH_ALL_USERS_DATA
+          );
+    let user = allUsersData.data.users.filter((e) => {
+        return e.id == id;
+    })
+
+    setUserData(user !== null ? user[0] : '')
+    
     const usersPostsData = await axios.get(
         FETCH_ALL_USERS_DATA +"/" + id + FETCH_SPECIFIC_USERS_POSTS
     );
-    console.log(usersPostsData);
+    console.log(usersPostsData,user[0]);
     setUsersPostsData(usersPostsData.data);
     setLoading(false);
   };
